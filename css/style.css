@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+/* some basic styles */
+:root{
+    --bg-color: rgb(32, 32, 34);
+    --primary-color: #DEEBFF;
+}
+
+.game{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+/* the title of my game */
+.title{
+    color: white;
+    text-align: center;
+    font-size: 2.8rem;
+    padding: 20px 0px;
+}
+
+.title span{
+    color: #BAD5FF;
+}
+
+.mainGame{
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3, 130px);
+    margin: 20px 0px ;
+}
+
+.boxes{
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease-in-out all;
+    cursor: pointer;
+}
+
+.boxes:hover{
+    background-color: rgba(255, 255, 255, 0.03);
+
+}
+
+.boxtext{
+    color:var(--primary-color);
+    font-size: 2.8em;
+    font-weight: 600;
+}
+
+
+.line-vertical{
+    border-right: 5px solid rgba(255, 255, 255, 0.7);
+}
+
+.line-horizontal{
+    border-bottom: 5px solid rgb(255, 255, 255, 0.7);
+}
+
+
+/* styling the result/ restart section */
+
+.result{
+    margin-left: 37%;
+    margin-top: 45px;
+}
+
+.info {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.info span{
+    color: var(--primary-color);
+}
+
+.restart{
+    padding: 10px 20px;
+    font-size: 1.1em;
+    margin-top: 10px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    color: rgb(18, 18, 19);
+    font-weight: 700;
+    background-color:var(--primary-color);
+    cursor:pointer;
+    transition: .2s ease-in-out all;
+}
+
+.restart:hover{
+    background-color: rgb(185, 209, 255)
+}
+
+/* credits OP */
+.credits{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.credits img{
+    margin: 20px;
+}
+
+/* .hide{
+    display: none;
+} */
+
+
+/* styling the bg-turn span */
+.bg-turn{
+    font-size: 10rem;
+    font-weight: bolder;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.025);
+    transform: translate(30%, 60%);
+    pointer-events: none;
+}
+
+/* media query for responsiveness */
+
+@media only screen and (max-width: 1241px) {
+    .result{
+        margin: auto;
+    }
+    .info{
+        text-align: center;
+    }
+
+    .restart{
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .bg-turn{
+        font-size: 7rem;
+        transform: translate(40%, 100%);
+    }
+  }
+
+@media only screen and (max-width: 460px) {
+    .title{
+        font-size: 2.2rem;
+    }
+
+    .mainGame{
+        grid-template-columns: repeat(3, 100px);
+    }
+
+    .boxes{
+        width: 100px;
+        height: 100px;
+    }
+
+    .info{
+        font-size: 1.1rem;
+    }
+
+    .bg-turn{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 665px) {
+    .bg-turn{
+        font-size: 5.5rem;
+        transform: translate(20%, 160%);
+    }
+}
+
+
